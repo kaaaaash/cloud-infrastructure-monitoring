@@ -14,7 +14,7 @@ provider "aws" {
 # Key pair for SSH access
 resource "aws_key_pair" "monitoring" {
   key_name   = "${var.project_name}-key"
-  public_key = file("C:/Users/ww100/.ssh/monitoring-key.pub")
+  public_key = var.ssh_public_key
 }
 
 # Security group
